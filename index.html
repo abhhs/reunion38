@@ -8,96 +8,47 @@
 <style>
 body{
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  margin:0;
-  background:#f3f5f9;
-  color:#1f2937;
+  margin:0;background:#f3f5f9;color:#1f2937;
 }
 .container{max-width:900px;margin:auto;padding:20px;}
-.card{
-  background:#fff;
-  border-radius:18px;
-  padding:26px;
-  box-shadow:0 12px 30px rgba(0,0,0,.08);
-}
+.card{background:#fff;border-radius:18px;padding:26px;box-shadow:0 12px 30px rgba(0,0,0,.08);}
 h1{text-align:center;color:#0a3d62;}
-.badge{
-  display:inline-block;
-  background:#0a3d62;
-  color:#fff;
-  padding:8px 18px;
-  border-radius:30px;
-  font-weight:600;
-}
+.badge{display:inline-block;background:#0a3d62;color:#fff;padding:8px 18px;border-radius:30px;font-weight:600;}
 .counter{text-align:center;font-weight:700;color:#0a3d62;margin:10px 0 20px;}
 
 label{font-weight:600;display:block;margin-bottom:6px;}
-input,textarea{
-  width:100%;padding:12px 14px;font-size:15px;
-  border-radius:10px;border:1.5px solid #cbd5e1;
-  margin-bottom:18px;box-sizing:border-box;
-}
+input,textarea{width:100%;padding:12px 14px;font-size:15px;border-radius:10px;border:1.5px solid #cbd5e1;margin-bottom:18px;box-sizing:border-box;}
+
 .option-card{
   display:grid;grid-template-columns:28px 1fr;gap:12px;
-  padding:14px 16px;border:1.5px solid #cbd5e1;
-  border-radius:14px;margin-bottom:12px;
+  padding:14px 16px;border:1.5px solid #cbd5e1;border-radius:14px;margin-bottom:12px;
 }
 .option-card input{transform:scale(1.25);margin-top:3px;}
 .option-card span{font-size:16px;line-height:1.5;}
 
-.pay-btn{
-  width:100%;padding:18px;font-size:18px;
-  font-weight:700;background:#0a3d62;color:#fff;
-  border:none;border-radius:18px;cursor:pointer;
-}
+.pay-btn{width:100%;padding:18px;font-size:18px;font-weight:700;background:#0a3d62;color:#fff;border:none;border-radius:18px;cursor:pointer;}
 
-/* Loader */
 .loader{display:none;text-align:center;padding:40px;}
-.spinner{
-  width:42px;height:42px;border:5px solid #ddd;
-  border-top-color:#0a3d62;border-radius:50%;
-  animation:spin 1s linear infinite;margin:0 auto 15px;
-}
-@keyframes spin{to{transform:rotate(360deg);}}
+.spinner{width:42px;height:42px;border:5px solid #ddd;border-top-color:#0a3d62;border-radius:50%;animation:spin 1s linear infinite;margin:0 auto 15px;}
+@keyframes spin{to{transform:rotate(360deg);} }
 
-/* Thank you */
 .thank-you{display:none;text-align:center;padding:40px;}
-.thank-you h2{color:#0a3d62;}
-
 .description{line-height:1.8;font-size:16px;margin:25px 0;}
 </style>
 </head>
 
 <body>
+<div class="container"><div class="card">
 
-<div class="container">
-<div class="card">
-
-<div style="text-align:center">
-  <span class="badge">🎉 ৩৮ বর্ষপূর্তি পুনর্মিলনী</span>
-</div>
-
+<div style="text-align:center"><span class="badge">🎉 ৩৮ বর্ষপূর্তি পুনর্মিলনী</span></div>
 <h1>Aricha Belayet Hossain High School</h1>
 
-<div class="counter">
-এখন পর্যন্ত <span id="regCount">0</span> জন রেজিস্ট্রেশন করেছেন
-</div>
+<div class="counter">এখন পর্যন্ত <span id="regCount">0</span> জন রেজিস্ট্রেশন করেছেন</div>
 
-<!-- FULL DESCRIPTION -->
 <div class="description">
 <p>প্রিয় প্রাক্তন শিক্ষার্থী, সম্মানিত শিক্ষকবৃন্দ ও শুভানুধ্যায়ী—</p>
-
-<p>
-আমাদের প্রিয় শিক্ষা প্রতিষ্ঠান <b>Aricha Belayet Hossain High School</b> এর
-গৌরবময় <b>৩৮ বর্ষপূর্তি পুনর্মিলনী</b> অনুষ্ঠিত হতে যাচ্ছে
-পবিত্র <b>ঈদুল ফিতর-এর ৩য় দিন</b>।
-</p>
-
-<p>
-দীর্ঘসময় পর প্রিয় বিদ্যাপীঠের স্মৃতিবিজড়িত প্রাঙ্গণে মিলিত হয়ে
-স্মৃতিচারণ, বন্ধুত্বের পুনর্মিলন এবং আনন্দঘন মুহূর্ত ভাগ করে নেওয়ার
-এই আয়োজন এক অনন্য সুযোগ।
-</p>
-
+<p>আমাদের প্রিয় শিক্ষা প্রতিষ্ঠান <b>Aricha Belayet Hossain High School</b> এর গৌরবময় <b>৩৮ বর্ষপূর্তি পুনর্মিলনী</b> অনুষ্ঠিত হতে যাচ্ছে পবিত্র <b>ঈদুল ফিতর-এর ৩য় দিন</b>।</p>
+<p>দীর্ঘসময় পর স্মৃতিবিজড়িত প্রাঙ্গণে মিলিত হয়ে স্মৃতিচারণ, বন্ধুত্বের পুনর্মিলন ও আনন্দ ভাগ করে নেওয়ার এক অনন্য সুযোগ।</p>
 <p><b>এই বিশেষ দিনে থাকছে—</b></p>
 <ul>
 <li>✨ স্মৃতিচারণ ও আড্ডা</li>
@@ -105,21 +56,8 @@ input,textarea{
 <li>✨ সম্মাননা ও বিশেষ আয়োজন</li>
 <li>✨ প্রিয় শিক্ষক ও সহপাঠীদের সাথে পুনর্মিলন</li>
 </ul>
-
-<p>
-অনুষ্ঠানটি সুশৃঙ্খলভাবে আয়োজনের জন্য অনুগ্রহ করে
-নিচের রেজিস্ট্রেশন ফর্মটি পূরণ করুন।
-</p>
-
-<p>
-<b>সবাইকে সপরিবারে অংশগ্রহণের জন্য আন্তরিকভাবে আমন্ত্রণ।</b>
-</p>
-
-<p>
-ধন্যবাদ ও শুভেচ্ছান্তে<br>
-আয়োজক কমিটি<br>
-ABHHS Alumni Association
-</p>
+<p><b>সবাইকে সপরিবারে অংশগ্রহণের জন্য আন্তরিকভাবে আমন্ত্রণ।</b></p>
+<p>ধন্যবাদ ও শুভেচ্ছান্তে<br>আয়োজক কমিটি<br>ABHHS Alumni Association</p>
 </div>
 
 <hr>
@@ -136,60 +74,67 @@ ABHHS Alumni Association
 <label>৮. ঠিকানা *</label><textarea required></textarea>
 <label>৯. ফেসবুক আইডি</label><input>
 
-<label>১০. আপনার কে কে আসতে চাচ্ছেন? *</label>
+<label>১০. আপনার কে কে আসতে চাচ্ছেন?</label>
 <div class="option-card"><input type="checkbox" value="0"><span>৪ বছরের নিচে শিশু — ফ্রি</span></div>
 <div class="option-card"><input type="checkbox" value="300"><span>৫–১০ বছরের বাচ্চা — ৩০০ টাকা</span></div>
 <div class="option-card"><input type="checkbox" value="500"><span>অতিথি — ৫০০ টাকা</span></div>
 <div class="option-card"><input type="checkbox" value="1000"><span>ছাত্র–ছাত্রী — ১০০০ টাকা</span></div>
 
-<!-- ✅ USER PHOTO OPTION -->
-<label>১৫. আপনার পাসপোর্ট সাইজ ছবি *</label>
+<!-- 🔥 ITEM SELECTION -->
+<label>১১. আপনি কোনটি নিতে চান?</label>
+<label class="option-card"><input type="radio" name="item" value="উত্তরীয়" required><span>উত্তরীয়</span></label>
+<label class="option-card"><input type="radio" name="item" value="টি-শার্ট"><span>টি-শার্ট</span></label>
+
+<!-- 🔥 T-SHIRT SIZE -->
+<label>১২. টি-শার্ট সাইজ</label>
+<label class="option-card"><input type="radio" name="size" value="S"><span>S</span></label>
+<label class="option-card"><input type="radio" name="size" value="M"><span>M</span></label>
+<label class="option-card"><input type="radio" name="size" value="L"><span>L</span></label>
+<label class="option-card"><input type="radio" name="size" value="XL"><span>XL</span></label>
+<label class="option-card"><input type="radio" name="size" value="XXL"><span>XXL</span></label>
+<label class="option-card"><input type="radio" name="size" value="XXXL"><span>XXXL</span></label>
+
+<!-- 🔥 PAYMENT -->
+<label>১৪. পেমেন্ট মাধ্যম *</label>
+<label class="option-card"><input type="radio" name="payment" value="বিকাশ" required><span>বিকাশ</span></label>
+<label class="option-card"><input type="radio" name="payment" value="নগদ"><span>নগদ</span></label>
+<label class="option-card"><input type="radio" name="payment" value="রকেট"><span>রকেট</span></label>
+
+<!-- 🔥 PHOTO -->
+<label>১৫. পাসপোর্ট সাইজ ছবি *</label>
 <input type="file" id="photoInput" accept="image/*" required>
 
-<button class="pay-btn" type="submit">
-পে করুন
-</button>
+<button class="pay-btn" type="submit">পে করুন</button>
 
 <div id="transactionSection" style="display:none">
-<label>Transaction ID *</label>
+<label>১৬. Transaction ID / Sender Number *</label>
 <input id="transactionInput">
 <button type="button" class="pay-btn" id="finalSubmitBtn">সাবমিট করুন</button>
 </div>
 
 </form>
 
-<div class="loader" id="loader">
-<div class="spinner"></div>
-<p>ডাটা জমা হচ্ছে…</p>
-</div>
+<div class="loader" id="loader"><div class="spinner"></div><p>ডাটা জমা হচ্ছে…</p></div>
 
 <div class="thank-you" id="thankYou">
 <h2>🎉 ধন্যবাদ!</h2>
-<p>আপনার রেজিস্ট্রেশন সফল হয়েছে</p>
 <p>রেজিস্ট্রেশন নম্বর: <b>#<span id="regNumber"></span></b></p>
 </div>
 
-</div>
-</div>
+</div></div>
 
 <script>
 const SHEET_URL="https://script.google.com/macros/s/AKfycbzRBHlqeul4GsAraxq3Me16YOYYfvcdFQrEGDTmbs0OgjXf4F4PSneLZ94oUxHG2O4/exec";
 
-// Step C fix
+// STEP C: stop auto submit, show transaction section
 registrationForm.addEventListener("submit",e=>{
   e.preventDefault();
   transactionSection.style.display="block";
 });
 
 finalSubmitBtn.onclick=()=>{
-  if(!transactionInput.value){
-    alert("Transaction ID দিন");
-    return;
-  }
-  if(!photoInput.files.length){
-    alert("পাসপোর্ট সাইজ ছবি দিন");
-    return;
-  }
+  if(!transactionInput.value) return alert("Transaction ID দিন");
+  if(!photoInput.files.length) return alert("পাসপোর্ট সাইজ ছবি দিন");
 
   registrationForm.style.display="none";
   loader.style.display="block";
@@ -197,12 +142,14 @@ finalSubmitBtn.onclick=()=>{
   fetch(SHEET_URL,{
     method:"POST",
     body:JSON.stringify({
-      transaction:transactionInput.value,
+      payment: document.querySelector('input[name="payment"]:checked').value,
+      item: document.querySelector('input[name="item"]:checked').value,
+      size: document.querySelector('input[name="size"]:checked')?.value || "",
+      transaction: transactionInput.value,
       photoName: photoInput.files[0].name
     })
   })
-  .then(r=>r.text())
-  .then(t=>{
+  .then(r=>r.text()).then(t=>{
     const res=JSON.parse(t);
     loader.style.display="none";
     thankYou.style.display="block";
