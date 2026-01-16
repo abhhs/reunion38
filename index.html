@@ -75,6 +75,25 @@ textarea {
   resize: vertical;
 }
 
+.checkbox-group {
+  margin-top: 10px;
+}
+
+.checkbox-group label {
+  display: block;
+  padding: 10px 12px;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  background: #f9fafb;
+}
+
+.checkbox-group input {
+  margin-right: 8px;
+  transform: scale(1.1);
+}
+
     
   </style>
 </head>
@@ -162,7 +181,35 @@ textarea {
 
 </form>
 
+<label>১০. আপনার কে কে আসতে চাচ্ছেন? *</label>
 
+<div class="checkbox-group">
+
+  <label>
+    <input type="checkbox" name="attend" value="0">
+    ৪ বছরের নিচে শিশু (ছেলে বা মেয়ে) — ফ্রি
+  </label>
+
+  <label>
+    <input type="checkbox" name="attend" value="300">
+    ৫–১০ বছরের বাচ্চা — ৩০০ টাকা
+  </label>
+
+  <label>
+    <input type="checkbox" name="attend" value="500">
+    অতিথি — ৫০০ টাকা
+  </label>
+
+  <label>
+    <input type="checkbox" name="attend" value="1000">
+    ছাত্র–ছাত্রী — ১০০০ টাকা
+  </label>
+
+</div>
+
+<br>
+
+    
     
 
     
