@@ -75,53 +75,43 @@ textarea {
   resize: vertical;
 }
 
-.checkbox-group {
-  margin-top: 10px;
-}
 
-.checkbox-group label {
-  display: block;
-  padding: 10px 12px;
-  border: 1.5px solid #cbd5e1;
-  border-radius: 8px;
-  margin-bottom: 10px;
-  cursor: pointer;
-  background: #f9fafb;
-}
-
-.checkbox-group input {
-  margin-right: 8px;
-  transform: scale(1.1);
-}
-
-
+/* ===== Attend Options (FINAL FIX) ===== */
 
 .attend-options {
   margin-top: 12px;
 }
 
 .attend-item {
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 26px 1fr;
+  align-items: start;
+
   gap: 12px;
   padding: 14px 16px;
+  margin-bottom: 12px;
+
   border: 1.5px solid #cbd5e1;
   border-radius: 12px;
   background: #ffffff;
-  margin-bottom: 12px;
+
+  box-sizing: border-box;
 }
 
 .attend-item input {
+  margin-top: 4px;
   transform: scale(1.2);
-  flex-shrink: 0;
 }
 
 .attend-item span {
   font-size: 16px;
-  font-weight: 500;
+  line-height: 1.5;
   color: #1f2937;
-  line-height: 1.4;
+  word-break: break-word;
 }
+
+
+
 
 
     
