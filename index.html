@@ -321,11 +321,73 @@ textarea {
 
 
 
+<label>১৩. আপনি কি এই পুনর্মিলনীতে (আর্থিক বা অন্যভাবে) অবদান রাখতে চান?</label>
+
+<div class="radio-options">
+
+  <label class="radio-item">
+    <input type="radio" name="contribute" value="yes">
+    <span>হ্যাঁ</span>
+  </label>
+
+  <label class="radio-item">
+    <input type="radio" name="contribute" value="no" checked>
+    <span>না</span>
+  </label>
+
+</div>
+
+<div id="contributionBox" style="display:none;">
+  <label>আপনার অবদানের বিস্তারিত লিখুন</label>
+  <textarea placeholder="আপনি কীভাবে অবদান রাখতে চান তা লিখুন..."></textarea>
+</div>
+
+<br>
+
+
+
+  
+
+<label>
+১৪. আপনি কোন মাধ্যমে আপনার রেজিস্ট্রেশন ফি প্রদান করতে চান?
+(ক্যাশ চার্জ প্রযোজ্য – প্রতি ১০০০ টাকায় ২০ টাকা) *
+</label>
+
+<div class="radio-options">
+
+  <label class="radio-item">
+    <input type="radio" name="payment_method" value="বিকাশ" required>
+    <span>বিকাশ</span>
+  </label>
+
+  <label class="radio-item">
+    <input type="radio" name="payment_method" value="নগদ">
+    <span>নগদ</span>
+  </label>
+
+  <label class="radio-item">
+    <input type="radio" name="payment_method" value="রকেট">
+    <span>রকেট</span>
+  </label>
+
+</div>
+
+<br>
+
+
+
 
 
   
 
 
+
+
+
+
+
+
+  
 
 
 
@@ -342,5 +404,30 @@ textarea {
     
   </div>
 </div>
+
+
+
+  
+
+<script>
+  const contributeRadios = document.querySelectorAll('input[name="contribute"]');
+  const contributionBox = document.getElementById('contributionBox');
+
+  contributeRadios.forEach(radio => {
+    radio.addEventListener('change', () => {
+      if (radio.value === 'yes' && radio.checked) {
+        contributionBox.style.display = 'block';
+      } else if (radio.value === 'no' && radio.checked) {
+        contributionBox.style.display = 'none';
+      }
+    });
+  });
+</script>
+
+
+
+  
+
+  
 </body>
 </html>
