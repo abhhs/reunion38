@@ -1,675 +1,329 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>৩৮ বর্ষপূর্তি পুনর্মিলনী | ABHHS</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ABHHS 38th Reunion</title>
 
-  <style>
-    body{
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      margin:0;
-      background:#f6f7fb;
-      color:#222;
-    }
-    .container{
-      max-width:900px;
-      margin:auto;
-      padding:20px;
-    }
-    .card{
-      background:#fff;
-      border-radius:12px;
-      padding:24px;
-      box-shadow:0 10px 25px rgba(0,0,0,0.08);
-    }
-    h1{text-align:center;color:#0a3d62;}
-    ul{line-height:1.8;}
-    .badge{
-      background:#0a3d62;
-      color:#fff;
-      padding:6px 14px;
-      border-radius:20px;
-      display:inline-block;
-      margin-bottom:10px;
-    }
-
-/* ===== Form Styling ===== */
-form {
-  margin-top: 20px;
+<style>
+body{
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  margin:0;
+  background:#f3f5f9;
+  color:#1f2937;
 }
 
-label {
-  font-weight: 600;
-  color: #333;
-  display: block;
-  margin-bottom: 6px;
+.container{
+  max-width:900px;
+  margin:auto;
+  padding:20px;
 }
 
-input, textarea {
-  width: 100%;
-  padding: 12px 14px;
-  font-size: 15px;
-  border-radius: 8px;
-  border: 1.5px solid #cbd5e1;
-  background: #ffffff;
-  box-sizing: border-box;
-  transition: all 0.2s ease;
+.card{
+  background:#ffffff;
+  border-radius:18px;
+  padding:26px;
+  box-shadow:0 12px 30px rgba(0,0,0,0.08);
 }
 
-input::placeholder,
-textarea::placeholder {
-  color: #9ca3af;
+/* Headings */
+h1{
+  text-align:center;
+  color:#0a3d62;
+  margin-bottom:10px;
+}
+.badge{
+  display:inline-block;
+  background:#0a3d62;
+  color:#fff;
+  padding:8px 18px;
+  border-radius:30px;
+  font-weight:600;
+  margin-bottom:20px;
 }
 
-input:focus,
-textarea:focus {
-  outline: none;
-  border-color: #0a3d62;
-  box-shadow: 0 0 0 3px rgba(10, 61, 98, 0.15);
-  background: #fff;
+/* Form base */
+label{
+  font-weight:600;
+  margin-bottom:6px;
+  display:block;
 }
 
-textarea {
-  min-height: 90px;
-  resize: vertical;
+input, textarea{
+  width:100%;
+  padding:12px 14px;
+  font-size:15px;
+  border-radius:10px;
+  border:1.5px solid #cbd5e1;
+  margin-bottom:18px;
+  box-sizing:border-box;
 }
 
-
-/* ===== Attend Options (FINAL FIX) ===== */
-
-.attend-options {
-  margin-top: 12px;
+input:focus, textarea:focus{
+  outline:none;
+  border-color:#0a3d62;
+  box-shadow:0 0 0 3px rgba(10,61,98,.15);
 }
 
-.attend-item {
-  display: grid;
-  grid-template-columns: 26px 1fr;
-  align-items: start;
-
-  gap: 12px;
-  padding: 14px 16px;
-  margin-bottom: 12px;
-
-  border: 1.5px solid #cbd5e1;
-  border-radius: 12px;
-  background: #ffffff;
-
-  box-sizing: border-box;
+/* Checkbox & radio card */
+.option-card{
+  display:grid;
+  grid-template-columns:28px 1fr;
+  gap:12px;
+  padding:14px 16px;
+  border:1.5px solid #cbd5e1;
+  border-radius:14px;
+  margin-bottom:12px;
+  background:#fff;
+  align-items:start;
 }
 
-.attend-item input {
-  margin-top: 4px;
-  transform: scale(1.2);
+.option-card input{
+  transform:scale(1.25);
+  margin-top:3px;
 }
 
-.attend-item span {
-  font-size: 16px;
-  line-height: 1.5;
-  color: #1f2937;
-  word-break: break-word;
+.option-card span{
+  font-size:16px;
+  line-height:1.5;
 }
 
-
-
-
-
-
-/* ===== Radio Options ===== */
-
-.radio-options {
-  margin-top: 12px;
+/* Pay button */
+.pay-btn{
+  width:100%;
+  padding:18px;
+  font-size:18px;
+  font-weight:700;
+  background:#0a3d62;
+  color:#fff;
+  border:none;
+  border-radius:18px;
+  cursor:pointer;
 }
 
-.radio-item {
-  display: grid;
-  grid-template-columns: 26px 1fr;
-  align-items: center;
-
-  gap: 12px;
-  padding: 14px 16px;
-  margin-bottom: 12px;
-
-  border: 1.5px solid #cbd5e1;
-  border-radius: 12px;
-  background: #ffffff;
-
-  box-sizing: border-box;
+/* Modal */
+.modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.55);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
 }
 
-.radio-item input {
-  transform: scale(1.2);
+.modal-content{
+  position:relative;
+  background:#fff;
+  width:92%;
+  max-width:420px;
+  padding:26px;
+  border-radius:18px;
+  text-align:center;
 }
 
-.radio-item span {
-  font-size: 16px;
-  font-weight: 500;
-  color: #1f2937;
+.close-btn{
+  position:absolute;
+  top:12px;
+  right:14px;
+  font-size:22px;
+  border:none;
+  background:none;
+  cursor:pointer;
 }
-
-    
-
-/* ===== Pay Button ===== */
-
-.pay-section {
-  margin-top: 30px;
-  text-align: center;
-}
-
-#payButton {
-  width: 100%;
-  padding: 16px;
-  font-size: 18px;
-  font-weight: 600;
-  background: #0a3d62;
-  color: #ffffff;
-  border: none;
-  border-radius: 14px;
-  cursor: pointer;
-  transition: background 0.2s ease;
-}
-
-#payButton:hover {
-  background: #083353;
-}
-
-#payButton:active {
-  transform: scale(0.98);
-}
-    
-
-
-
-
-
-/* ===== Payment Modal ===== */
-
-.modal {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-}
-
-.modal-content {
-  background: #ffffff;
-  width: 90%;
-  max-width: 400px;
-  padding: 24px;
-  border-radius: 16px;
-  text-align: center;
-}
-
-.modal-content h3 {
-  margin-bottom: 16px;
-  color: #0a3d62;
-}
-
-.modal-content p {
-  font-size: 16px;
-  margin: 10px 0;
-}
-
-#paymentDoneBtn {
-  margin-top: 20px;
-  width: 100%;
-  padding: 14px;
-  font-size: 16px;
-  background: #0a3d62;
-  color: #fff;
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
-}
-
-
-    
-
-
-/* ===== Modal Close Button ===== */
-.close-btn {
-  position: absolute;
-  top: 12px;
-  right: 14px;
-  background: transparent;
-  border: none;
-  font-size: 22px;
-  cursor: pointer;
-  color: #444;
-}
-
-.close-btn:hover {
-  color: #000;
-}
-
-    
-.modal-content {
-  position: relative;
-}
-    
-    
-
-    
-  </style>
+</style>
 </head>
 
 <body>
+
 <div class="container">
-  <div class="card">
+<div class="card">
 
-    <div style="text-align:center">
-      <span class="badge">🎉 ৩৮ বর্ষপূর্তি পুনর্মিলনী</span>
-    </div>
+<div style="text-align:center">
+  <span class="badge">🎉 ৩৮ বর্ষপূর্তি পুনর্মিলনী</span>
+</div>
 
-    <h1>Aricha Belayet Hossain High School</h1>
+<h1>Aricha Belayet Hossain High School</h1>
 
-    <p>
-      প্রিয় প্রাক্তন শিক্ষার্থী, সম্মানিত শিক্ষকবৃন্দ ও শুভানুধ্যায়ী—
-      আমাদের প্রিয় শিক্ষা প্রতিষ্ঠান Aricha Belayet Hossain High School এর
-      গৌরবময় ৩৮ বর্ষপূর্তি পুনর্মিলনী অনুষ্ঠান অনুষ্ঠিত হতে যাচ্ছে
-      পবিত্র ঈদুল ফিতর-এর ৩য় দিন।
-    </p>
+<p>
+প্রিয় প্রাক্তন শিক্ষার্থী, সম্মানিত শিক্ষকবৃন্দ ও শুভানুধ্যায়ী—  
+আমাদের প্রিয় শিক্ষা প্রতিষ্ঠান <b>Aricha Belayet Hossain High School</b> এর
+গৌরবময় <b>৩৮ বর্ষপূর্তি পুনর্মিলনী</b> অনুষ্ঠিত হতে যাচ্ছে
+পবিত্র ঈদুল ফিতর-এর ৩য় দিন।
+</p>
 
-    <p>
-      দীর্ঘসময় পর প্রিয় বিদ্যাপীঠের স্মৃতিবিজরিত আঙ্গিনায় মিলিত হওয়ার এই আয়োজন
-      স্মৃতিচারণ, বন্ধুত্বের পুনর্মিলন এবং আনন্দঘন মুহূর্ত ভাগ করে নেওয়ার
-      এক অনন্য সুযোগ।
-    </p>
+<p>
+দীর্ঘ সময় পর স্মৃতিবিজড়িত প্রাঙ্গণে একত্রিত হয়ে
+স্মৃতিচারণ, বন্ধুত্বের পুনর্মিলন ও আনন্দ ভাগ করে নেওয়ার
+এই আয়োজন আমাদের জন্য এক অনন্য সুযোগ।
+</p>
 
-    <h3>এই বিশেষ দিনে থাকছে—</h3>
-    <ul>
-      <li>✨ স্মৃতিচারণ ও আড্ডা</li>
-      <li>✨ সাংস্কৃতিক অনুষ্ঠান</li>
-      <li>✨ সম্মাননা ও বিশেষ আয়োজন</li>
-      <li>✨ প্রিয় শিক্ষক ও সহপাঠীদের সাথে পুনর্মিলন</li>
-    </ul>
+<p><b>এই বিশেষ দিনে থাকছে—</b></p>
+<ul>
+  <li>✨ স্মৃতিচারণ ও আড্ডা</li>
+  <li>✨ সাংস্কৃতিক অনুষ্ঠান</li>
+  <li>✨ সম্মাননা ও বিশেষ আয়োজন</li>
+  <li>✨ প্রিয় শিক্ষক ও সহপাঠীদের সাথে পুনর্মিলন</li>
+</ul>
 
-    <p>
-      অনুষ্ঠানটি সুশৃঙ্খল ও সুন্দরভাবে আয়োজনের জন্য আপনার/আপনাদের অংশগ্রহণ
-      নিশ্চিত করতে অনুগ্রহ করে নিচের রেজিস্ট্রেশন ফর্মটি পূরণ করুন।
-    </p>
+<p>
+অনুষ্ঠানটি সুশৃঙ্খল ও সুন্দরভাবে আয়োজনের জন্য
+আপনার অংশগ্রহণ নিশ্চিত করতে অনুগ্রহ করে
+নিচের রেজিস্ট্রেশন ফর্মটি সঠিকভাবে পূরণ করুন।
+</p>
 
-    <p><b>সবাইকে সপরিবারে অংশগ্রহণের জন্য আন্তরিকভাবে আমন্ত্রণ জানাচ্ছি।</b></p>
+<p><b>সবাইকে সপরিবারে অংশগ্রহণের জন্য আন্তরিকভাবে আমন্ত্রণ।</b></p>
 
-    <p>
-      📌 ধন্যবাদ ও শুভেচ্ছান্তে<br>
-      আয়োজক কমিটি<br>
-      Aricha Belayet Hossain High School Alumni Association
-    </p>
-
-
-
-<hr style="margin:40px 0">
-
-<h2 style="text-align:center;color:#0a3d62;">
-রেজিস্ট্রেশন ফর্ম
-</h2>
+<hr style="margin:30px 0">
 
 <form id="registrationForm">
 
-  <label>১. আপনার নাম *</label><br>
-  <input type="text" required><br><br>
+<label>১. আপনার নাম *</label>
+<input type="text" required>
 
-  <label>২. আপনার SSC ব্যাচ *</label><br>
-  <input type="text" required><br><br>
+<label>২. আপনার SSC ব্যাচ *</label>
+<input type="text" required>
 
-  <label>৩. আপনার ইমেল (কনফার্মেশন মেইল যাবে) *</label><br>
-  <input type="email" required><br><br>
+<label>৩. আপনার ইমেল *</label>
+<input type="email" required>
 
-  <label>৪. আপনার ফোন নম্বর *</label><br>
-  <input type="tel" required><br><br>
+<label>৪. আপনার ফোন নম্বর *</label>
+<input type="tel" required>
 
-  <label>৫. আপনার বর্তমান পেশা/পদবি</label><br>
-  <input type="text"><br><br>
+<label>৫. আপনার বর্তমান পেশা/পদবি</label>
+<input type="text">
 
-  <label>৬. আপনার প্রতিষ্ঠান/সংগঠন</label><br>
-  <input type="text"><br><br>
+<label>৬. আপনার প্রতিষ্ঠান/সংগঠন</label>
+<input type="text">
 
-  <label>৭. আপনার রক্তের গ্রুপ</label><br>
-  <input type="text"><br><br>
+<label>৭. আপনার রক্তের গ্রুপ</label>
+<input type="text">
 
-  <label>৮. আপনার ঠিকানা *</label><br>
-  <textarea required></textarea><br><br>
+<label>৮. আপনার ঠিকানা *</label>
+<textarea required></textarea>
 
-  <label>৯. আপনার ফেসবুক আইডি (লিঙ্ক বা নাম)</label><br>
-  <input type="text"><br><br>
-
-
-
-
-
-
-
-
+<label>৯. আপনার ফেসবুক আইডি</label>
+<input type="text">
 
 <label>১০. আপনার কে কে আসতে চাচ্ছেন? *</label>
 
-<div class="attend-options">
-
-  <div class="attend-item">
-    <input type="checkbox" name="attend" value="0">
-    <span>৪ বছরের নিচে শিশু (ছেলে বা মেয়ে) — ফ্রি</span>
-  </div>
-
-  <div class="attend-item">
-    <input type="checkbox" name="attend" value="300">
-    <span>৫–১০ বছরের বাচ্চা — ৩০০ টাকা</span>
-  </div>
-
-  <div class="attend-item">
-    <input type="checkbox" name="attend" value="500">
-    <span>অতিথি — ৫০০ টাকা</span>
-  </div>
-
-  <div class="attend-item">
-    <input type="checkbox" name="attend" value="1000">
-    <span>ছাত্র–ছাত্রী — ১০০০ টাকা</span>
-  </div>
-
-
-<label>১১. আপনি কোনটি নিতে চান? *</label>
-
-<div class="radio-options">
-
-  <label class="radio-item">
-    <input type="radio" name="item" required>
-    <span>উত্তরীয়</span>
-  </label>
-
-  <label class="radio-item">
-    <input type="radio" name="item">
-    <span>টি-শার্ট</span>
-  </label>
-
+<div class="option-card">
+  <input type="checkbox" value="0">
+  <span>৪ বছরের নিচে শিশু (ছেলে বা মেয়ে) — ফ্রি</span>
 </div>
 
-<br>
-
-<label>১২. আপনার টি-শার্টের সাইজ কী? *</label>
-
-<div class="radio-options">
-
-  <label class="radio-item">
-    <input type="radio" name="tshirt_size" required>
-    <span>S</span>
-  </label>
-
-  <label class="radio-item">
-    <input type="radio" name="tshirt_size">
-    <span>M</span>
-  </label>
-
-  <label class="radio-item">
-    <input type="radio" name="tshirt_size">
-    <span>L</span>
-  </label>
-
-  <label class="radio-item">
-    <input type="radio" name="tshirt_size">
-    <span>XL</span>
-  </label>
-
-  <label class="radio-item">
-    <input type="radio" name="tshirt_size">
-    <span>XXL</span>
-  </label>
-
-  <label class="radio-item">
-    <input type="radio" name="tshirt_size">
-    <span>XXXL</span>
-  </label>
-
+<div class="option-card">
+  <input type="checkbox" value="300">
+  <span>৫–১০ বছরের বাচ্চা — ৩০০ টাকা</span>
 </div>
 
-<br>
-
-
-
-
-<label>১৩. আপনি কি এই পুনর্মিলনীতে (আর্থিক বা অন্যভাবে) অবদান রাখতে চান?</label>
-
-<div class="radio-options">
-
-  <label class="radio-item">
-    <input type="radio" name="contribute" value="yes">
-    <span>হ্যাঁ</span>
-  </label>
-
-  <label class="radio-item">
-    <input type="radio" name="contribute" value="no" checked>
-    <span>না</span>
-  </label>
-
+<div class="option-card">
+  <input type="checkbox" value="500">
+  <span>অতিথি — ৫০০ টাকা</span>
 </div>
 
-<div id="contributionBox" style="display:none;">
-  <label>আপনার অবদানের বিস্তারিত লিখুন</label>
-  <textarea placeholder="আপনি কীভাবে অবদান রাখতে চান তা লিখুন..."></textarea>
+<div class="option-card">
+  <input type="checkbox" value="1000">
+  <span>ছাত্র–ছাত্রী — ১০০০ টাকা</span>
 </div>
 
-<br>
+<label>১১. আপনি কোনটি নিতে চান?</label>
 
-
-
-  
-
-<label>
-১৪. আপনি কোন মাধ্যমে আপনার রেজিস্ট্রেশন ফি প্রদান করতে চান?
-(ক্যাশ চার্জ প্রযোজ্য – প্রতি ১০০০ টাকায় ২০ টাকা) *
+<label class="option-card">
+  <input type="radio" name="item">
+  <span>উত্তরীয়</span>
 </label>
 
-<div class="radio-options">
+<label class="option-card">
+  <input type="radio" name="item">
+  <span>টি-শার্ট</span>
+</label>
 
-  <label class="radio-item">
-    <input type="radio" name="payment_method" value="বিকাশ" required>
-    <span>বিকাশ</span>
-  </label>
+<label>১২. আপনার টি-শার্টের সাইজ</label>
 
-  <label class="radio-item">
-    <input type="radio" name="payment_method" value="নগদ">
-    <span>নগদ</span>
-  </label>
+<label class="option-card"><input type="radio" name="size"><span>S</span></label>
+<label class="option-card"><input type="radio" name="size"><span>M</span></label>
+<label class="option-card"><input type="radio" name="size"><span>L</span></label>
+<label class="option-card"><input type="radio" name="size"><span>XL</span></label>
+<label class="option-card"><input type="radio" name="size"><span>XXL</span></label>
+<label class="option-card"><input type="radio" name="size"><span>XXXL</span></label>
 
-  <label class="radio-item">
-    <input type="radio" name="payment_method" value="রকেট">
-    <span>রকেট</span>
-  </label>
+<label>১৩. আপনি কি এই পুনর্মিলনীতে অবদান রাখতে চান?</label>
 
+<label class="option-card">
+  <input type="radio" name="donate" value="yes">
+  <span>হ্যাঁ</span>
+</label>
+
+<label class="option-card">
+  <input type="radio" name="donate" value="no" checked>
+  <span>না</span>
+</label>
+
+<div id="donationBox" style="display:none">
+  <textarea placeholder="অবদানের বিস্তারিত লিখুন"></textarea>
 </div>
 
-<br>
+<label>১৪. পেমেন্ট মাধ্যম *</label>
 
+<label class="option-card"><input type="radio" name="payment" value="বিকাশ" required><span>বিকাশ</span></label>
+<label class="option-card"><input type="radio" name="payment" value="নগদ"><span>নগদ</span></label>
+<label class="option-card"><input type="radio" name="payment" value="রকেট"><span>রকেট</span></label>
 
+<label>১৫. পাসপোর্ট সাইজ ছবি *</label>
+<input type="file" accept="image/*" required>
 
+<button class="pay-btn" type="submit">
+  পে করুন ৳ <span id="payAmount">0</span>
+</button>
 
-
-  <label>১৫. আপনার একটি পাসপোর্ট সাইজের ছবি দিন *</label>
-
-<input 
-  type="file"
-  accept="image/*"
-  required
->
-
-<p style="font-size:14px;color:#555;">
-  (শুধু ছবি ফাইল দিন – JPG / PNG)
-</p>
-
-<br>
-
-
-
-
-
-<!-- Pay Button Section -->
-<div class="pay-section">
-
-  <button type="submit" id="payButton">
-    পে করুন ৳ <span id="payAmount">0</span>
-  </button>
-
-</div>
-
-
-  
-
-
-<!-- Payment Popup -->
-  <button type="button" id="closeModal" class="close-btn">✕</button>
-<div id="paymentModal" class="modal" style="display:none;">
-  <div class="modal-content">
-
-    <h3>পেমেন্ট করুন</h3>
-
-    <p>
-      <strong>পেমেন্ট মাধ্যম:</strong>
-      <span id="selectedMethod"></span>
-    </p>
-
-    <p>
-      <strong>নম্বর:</strong>
-      <span id="paymentNumber"></span>
-    </p>
-
-    <button type="button" id="paymentDoneBtn">
-      আমি পেমেন্ট করেছি
-    </button>
-
-  </div>
-</div>
-
-
-  
-
-
-
-
-  
 </form>
 
-
-
-
-
-
-
-
-  
-
-  
+</div>
 </div>
 
-<br>
-
-<br>
-
-    
-    
-
-    
+<!-- Modal -->
+<div class="modal" id="paymentModal">
+  <div class="modal-content">
+    <button class="close-btn" id="closeModal">✕</button>
+    <h3>পেমেন্ট করুন</h3>
+    <p>মাধ্যম: <span id="method"></span></p>
+    <p>নম্বর: <span id="number"></span></p>
+    <button class="pay-btn" id="doneBtn">আমি পেমেন্ট করেছি</button>
   </div>
 </div>
 
-
-
-  
-
 <script>
-  const contributeRadios = document.querySelectorAll('input[name="contribute"]');
-  const contributionBox = document.getElementById('contributionBox');
+const checks=document.querySelectorAll('.option-card input[type="checkbox"]');
+const amount=document.getElementById('payAmount');
 
-  contributeRadios.forEach(radio => {
-    radio.addEventListener('change', () => {
-      if (radio.value === 'yes' && radio.checked) {
-        contributionBox.style.display = 'block';
-      } else if (radio.value === 'no' && radio.checked) {
-        contributionBox.style.display = 'none';
-      }
-    });
-  });
+function calc(){
+ let base=0;
+ checks.forEach(c=>{if(c.checked) base+=parseInt(c.value)});
+ let charge=Math.floor(base/100)*2;
+ amount.textContent=base+charge;
+}
+checks.forEach(c=>c.addEventListener('change',calc));
+
+document.querySelectorAll('input[name="donate"]').forEach(r=>{
+ r.onchange=()=>document.getElementById('donationBox').style.display=
+ r.value==='yes'&&r.checked?'block':'none';
+});
+
+const modal=document.getElementById('paymentModal');
+document.getElementById('registrationForm').onsubmit=e=>{
+ e.preventDefault();
+ const m=document.querySelector('input[name="payment"]:checked');
+ if(!m) return alert('পেমেন্ট মাধ্যম নির্বাচন করুন');
+ document.getElementById('method').textContent=m.value;
+ document.getElementById('number').textContent=
+ m.value==='বিকাশ'?'01234':m.value==='নগদ'?'012345':'012346';
+ modal.style.display='flex';
+};
+
+document.getElementById('closeModal').onclick=
+document.getElementById('doneBtn').onclick=()=>modal.style.display='none';
 </script>
 
-
-
-
-<script>
-  const attendCheckboxes = document.querySelectorAll('.attend-item input[type="checkbox"]');
-  const payAmountEl = document.getElementById('payAmount');
-
-  function calculateTotal() {
-    let baseAmount = 0;
-
-    attendCheckboxes.forEach(cb => {
-      if (cb.checked) {
-        baseAmount += parseInt(cb.value);
-      }
-    });
-
-    // Service charge: প্রতি ১০০ টাকায় ২ টাকা
-    let serviceCharge = Math.floor(baseAmount / 100) * 2;
-    let finalAmount = baseAmount + serviceCharge;
-
-    payAmountEl.textContent = finalAmount;
-  }
-
-  attendCheckboxes.forEach(cb => {
-    cb.addEventListener('change', calculateTotal);
-  });
-</script>
-
-
-
-
-
-
-<script>
-  const form = document.getElementById('registrationForm');
-  const modal = document.getElementById('paymentModal');
-  const selectedMethodEl = document.getElementById('selectedMethod');
-  const paymentNumberEl = document.getElementById('paymentNumber');
-  const paymentDoneBtn = document.getElementById('paymentDoneBtn');
-
-  const paymentNumbers = {
-    "বিকাশ": "01234",
-    "নগদ": "012345",
-    "রকেট": "012346"
-  };
-
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
-
-    const method = document.querySelector('input[name="payment_method"]:checked');
-    if (!method) {
-      alert('দয়া করে পেমেন্ট মাধ্যম নির্বাচন করুন');
-      return;
-    }
-
-    selectedMethodEl.textContent = method.value;
-    paymentNumberEl.textContent = paymentNumbers[method.value];
-
-    modal.style.display = 'flex';
-  });
-
-  paymentDoneBtn.addEventListener('click', () => {
-    modal.style.display = 'none';
-  });
-</script>
-
-<script>
-  const closeModalBtn = document.getElementById('closeModal');
-
-  closeModalBtn.addEventListener('click', function () {
-    modal.style.display = 'none';
-  });
-</script>
-
-
-
-  
-
-  
 </body>
 </html>
