@@ -26,12 +26,13 @@ body{
   box-shadow:0 12px 30px rgba(0,0,0,0.08);
 }
 
-/* Headings */
+/* Header */
 h1{
   text-align:center;
   color:#0a3d62;
   margin-bottom:10px;
 }
+
 .badge{
   display:inline-block;
   background:#0a3d62;
@@ -65,7 +66,7 @@ input:focus, textarea:focus{
   box-shadow:0 0 0 3px rgba(10,61,98,.15);
 }
 
-/* Checkbox & radio card */
+/* Checkbox & Radio cards */
 .option-card{
   display:grid;
   grid-template-columns:28px 1fr;
@@ -122,14 +123,38 @@ input:focus, textarea:focus{
   text-align:center;
 }
 
+/* 🔴 RED CLOSE BUTTON */
 .close-btn{
   position:absolute;
-  top:12px;
-  right:14px;
-  font-size:22px;
+  top:10px;
+  right:12px;
+
+  width:38px;
+  height:38px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-size:26px;
+  font-weight:700;
+
+  color:#e11d48;
+  background:#fee2e2;
   border:none;
-  background:none;
+  border-radius:50%;
+
   cursor:pointer;
+  transition:all .2s ease;
+}
+
+.close-btn:hover{
+  background:#fecaca;
+  transform:scale(1.08);
+}
+
+.close-btn:active{
+  transform:scale(0.95);
 }
 </style>
 </head>
@@ -229,15 +254,8 @@ input:focus, textarea:focus{
 
 <label>১১. আপনি কোনটি নিতে চান?</label>
 
-<label class="option-card">
-  <input type="radio" name="item">
-  <span>উত্তরীয়</span>
-</label>
-
-<label class="option-card">
-  <input type="radio" name="item">
-  <span>টি-শার্ট</span>
-</label>
+<label class="option-card"><input type="radio" name="item"><span>উত্তরীয়</span></label>
+<label class="option-card"><input type="radio" name="item"><span>টি-শার্ট</span></label>
 
 <label>১২. আপনার টি-শার্টের সাইজ</label>
 
@@ -250,15 +268,8 @@ input:focus, textarea:focus{
 
 <label>১৩. আপনি কি এই পুনর্মিলনীতে অবদান রাখতে চান?</label>
 
-<label class="option-card">
-  <input type="radio" name="donate" value="yes">
-  <span>হ্যাঁ</span>
-</label>
-
-<label class="option-card">
-  <input type="radio" name="donate" value="no" checked>
-  <span>না</span>
-</label>
+<label class="option-card"><input type="radio" name="donate" value="yes"><span>হ্যাঁ</span></label>
+<label class="option-card"><input type="radio" name="donate" value="no" checked><span>না</span></label>
 
 <div id="donationBox" style="display:none">
   <textarea placeholder="অবদানের বিস্তারিত লিখুন"></textarea>
@@ -278,11 +289,10 @@ input:focus, textarea:focus{
 </button>
 
 </form>
-
 </div>
 </div>
 
-<!-- Modal -->
+<!-- Payment Modal -->
 <div class="modal" id="paymentModal">
   <div class="modal-content">
     <button class="close-btn" id="closeModal">✕</button>
