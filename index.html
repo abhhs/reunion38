@@ -114,6 +114,42 @@ textarea {
 
 
 
+
+/* ===== Radio Options ===== */
+
+.radio-options {
+  margin-top: 12px;
+}
+
+.radio-item {
+  display: grid;
+  grid-template-columns: 26px 1fr;
+  align-items: center;
+
+  gap: 12px;
+  padding: 14px 16px;
+  margin-bottom: 12px;
+
+  border: 1.5px solid #cbd5e1;
+  border-radius: 12px;
+  background: #ffffff;
+
+  box-sizing: border-box;
+}
+
+.radio-item input {
+  transform: scale(1.2);
+}
+
+.radio-item span {
+  font-size: 16px;
+  font-weight: 500;
+  color: #1f2937;
+}
+
+    
+
+
     
   </style>
 </head>
@@ -225,6 +261,32 @@ textarea {
     <span>ছাত্র–ছাত্রী — ১০০০ টাকা</span>
   </div>
 
+
+<label>১১. আপনি কোনটি নিতে চান? *</label>
+
+<div class="radio-options">
+
+  <label class="radio-item">
+    <input type="radio" name="item" required>
+    <span>উত্তরীয়</span>
+  </label>
+
+  <label class="radio-item">
+    <input type="radio" name="item">
+    <span>টি-শার্ট</span>
+  </label>
+
+</div>
+
+<br>
+
+
+
+
+
+
+
+  
 </div>
 
 <br>
