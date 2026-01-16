@@ -312,11 +312,7 @@ finalSubmitBtn.onclick = () => {
         thankYou.style.display = "block";
         regNumber.textContent = res.regNo;
 
-        // Counter update (UI only)
-        let count = localStorage.getItem("regCount") || 0;
-        count++;
-        localStorage.setItem("regCount", count);
-        regCount.textContent = count;
+      
       } else {
         alert("ডাটা পাঠাতে সমস্যা হয়েছে: " + res.error);
         registrationForm.style.display = "block";
@@ -343,6 +339,23 @@ const SHEET_URL = "https://script.google.com/macros/s/AKfycbzRBHlqeul4GsAraxq3Me
   .then(res => res.text())
   .then(text => JSON.parse(text));
 }
+
+
+
+
+<script>
+const COUNT_URL = "https://script.google.com/macros/s/AKfycbzRBHlqeul4GsAraxq3Me16YOYYfvcdFQrEGDTmbs0OgjXf4F4PSneLZ94oUxHG2O4/exec";
+
+fetch(COUNT_URL)
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById("regCount").innerText = data.count;
+  })
+  .catch(err => {
+    console.error("Counter load failed", err);
+  });
+</script>
+
 
   
   
