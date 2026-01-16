@@ -10,7 +10,7 @@
         body { font-family: 'Hind Siliguri', sans-serif; background-color: #f8fafc; scroll-behavior: smooth; }
         .num-fix { font-family: 'Montserrat', sans-serif !important; }
         .modal { display: none; position: fixed; z-index: 100; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); backdrop-filter: blur(10px); }
-        .modal-content { background: white; margin: 5% auto; padding: 25px; border-radius: 25px; width: 90%; max-width: 500px; position: relative; animation: slideUp 0.4s ease-out; }
+        .modal-content { background: white; margin: 5% auto; padding: 25px; border-radius: 25px; width: 90%; max-width: 500px; position: relative; animation: slideUp 0.3s ease-out; }
         @keyframes slideUp { from { transform: translateY(30px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
         .spinner { border: 3px solid rgba(255,255,255,0.3); border-top: 3px solid white; border-radius: 50%; width: 22px; height: 22px; animation: spin 1s linear infinite; display: inline-block; }
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
@@ -48,8 +48,8 @@
 
             <form id="reunionForm" class="space-y-10">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div><label class="block font-bold text-gray-700 mb-2">১. আপনার নাম *</label><input type="text" id="name" required class="w-full border-2 p-4 rounded-2xl focus:border-blue-500 bg-gray-50 outline-none"></div>
-                    <div><label class="block font-bold text-gray-700 mb-2">২. আপনার SSC ব্যাচ *</label><input type="text" id="batch" required class="w-full border-2 p-4 rounded-2xl focus:border-blue-500 bg-gray-50 num-fix outline-none"></div>
+                    <div><label class="block font-bold text-gray-700 mb-2">১. আপনার নাম *</label><input type="text" id="name" required class="w-full border-2 p-4 rounded-2xl focus:border-blue-500 bg-gray-50 outline-none transition shadow-sm"></div>
+                    <div><label class="block font-bold text-gray-700 mb-2">২. আপনার SSC ব্যাচ *</label><input type="text" id="batch" required class="w-full border-2 p-4 rounded-2xl focus:border-blue-500 bg-gray-50 num-fix outline-none transition shadow-sm"></div>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -58,48 +58,54 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div><label class="block font-bold text-gray-700 mb-2">৫. পেশা</label><input type="text" id="profession" class="w-full border-2 p-4 rounded-2xl outline-none"></div>
-                    <div><label class="block font-bold text-gray-700 mb-2">৬. প্রতিষ্ঠান</label><input type="text" id="org" class="w-full border-2 p-4 rounded-2xl outline-none"></div>
+                    <div><label class="block font-bold text-gray-700 mb-2">৫. আপনার বর্তমান পেশা/পদবি</label><input type="text" id="profession" class="w-full border-2 p-4 rounded-2xl outline-none"></div>
+                    <div><label class="block font-bold text-gray-700 mb-2">৬. আপনার প্রতিষ্ঠান/সংগঠন</label><input type="text" id="org" class="w-full border-2 p-4 rounded-2xl outline-none"></div>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div><label class="block font-bold text-gray-700 mb-2">৭. রক্তের গ্রুপ</label><select id="blood" class="w-full border-2 p-4 rounded-2xl outline-none"><option value="">নির্বাচন করুন</option><option>A+</option><option>A-</option><option>B+</option><option>B-</option><option>O+</option><option>O-</option><option>AB+</option><option>AB-</option></select></div>
-                    <div><label class="block font-bold text-gray-700 mb-2">৮. ঠিকানা *</label><input type="text" id="address" required class="w-full border-2 p-4 rounded-2xl outline-none"></div>
+                    <div><label class="block font-bold text-gray-700 mb-2">৭. আপনার রক্তের গ্রুপ</label><select id="blood" class="w-full border-2 p-4 rounded-2xl outline-none"><option value="">নির্বাচন করুন</option><option>A+</option><option>A-</option><option>B+</option><option>B-</option><option>O+</option><option>O-</option><option>AB+</option><option>AB-</option></select></div>
+                    <div><label class="block font-bold text-gray-700 mb-2">৮. আপনার ঠিকানা *</label><input type="text" id="address" required class="w-full border-2 p-4 rounded-2xl outline-none"></div>
+                </div>
+
+                <div>
+                    <label class="block font-bold text-gray-700 mb-2">৯. ফেসবুক আইডি এর লিঙ্ক অথবা নাম</label>
+                    <input type="text" id="facebook" class="w-full border-2 p-4 rounded-2xl outline-none focus:border-blue-500" placeholder="Facebook Link/Name">
                 </div>
 
                 <div class="bg-indigo-50 p-8 rounded-[2rem] border-2 border-indigo-100">
                     <label class="block font-bold mb-6 text-indigo-900 text-xl border-b border-indigo-200 pb-2">১০. আপনার কে কে আসতে চাচ্ছেন? *</label>
                     <div class="space-y-4">
-                        <label class="flex items-center p-4 bg-white rounded-2xl shadow-sm cursor-pointer border-2 border-transparent hover:border-indigo-400 transition"><input type="checkbox" class="fee-checkbox w-6 h-6 accent-indigo-600" data-label="শিশু" data-amount="0"><span class="ml-4 font-semibold text-gray-700">১. ৪ বছরের নিচে শিশু ফ্রি।</span></label>
-                        <label class="flex items-center p-4 bg-white rounded-2xl shadow-sm cursor-pointer border-2 border-transparent hover:border-indigo-400 transition"><input type="checkbox" class="fee-checkbox w-6 h-6 accent-indigo-600" data-label="বাচ্চা" data-amount="300"><span class="ml-4 font-semibold text-gray-700">২. ৫-১০ বছরের বাচ্চা (<span class="num-fix">300</span> টাকা)</span></label>
-                        <label class="flex items-center p-4 bg-white rounded-2xl shadow-sm cursor-pointer border-2 border-transparent hover:border-indigo-400 transition"><input type="checkbox" class="fee-checkbox w-6 h-6 accent-indigo-600" data-label="অতিথি" data-amount="500"><span class="ml-4 font-semibold text-gray-700">৩. অতিথিদের রেজিস্ট্রেশন (<span class="num-fix">500</span> টাকা)</span></label>
-                        <label class="flex items-center p-4 bg-white rounded-2xl shadow-sm cursor-pointer border-2 border-transparent hover:border-indigo-400 transition"><input type="checkbox" class="fee-checkbox w-6 h-6 accent-indigo-600" data-label="ছাত্র-ছাত্রী" data-amount="1000"><span class="ml-4 font-semibold text-gray-700">৪. ছাত্র-ছাত্রীদের জন্য (<span class="num-fix">1000</span> টাকা)</span></label>
+                        <label class="flex items-center p-4 bg-white rounded-2xl shadow-sm cursor-pointer border-2 border-transparent hover:border-indigo-400 transition"><input type="checkbox" class="fee-checkbox w-6 h-6 accent-indigo-600" data-label="শিশু" data-amount="0"><span class="ml-4 font-semibold text-gray-700">১. ৪ বছরের নিচে শিশু (ছেলে বা মেয়ে ) ফ্রি।</span></label>
+                        <label class="flex items-center p-4 bg-white rounded-2xl shadow-sm cursor-pointer border-2 border-transparent hover:border-indigo-400 transition"><input type="checkbox" class="fee-checkbox w-6 h-6 accent-indigo-600" data-label="বাচ্চা" data-amount="300"><span class="ml-4 font-semibold text-gray-700">২. ৫-১০ বছরের বাচ্চাদের জন্য ফি <span class="num-fix">300</span> টাকা।</span></label>
+                        <label class="flex items-center p-4 bg-white rounded-2xl shadow-sm cursor-pointer border-2 border-transparent hover:border-indigo-400 transition"><input type="checkbox" class="fee-checkbox w-6 h-6 accent-indigo-600" data-label="অতিথি" data-amount="500"><span class="ml-4 font-semibold text-gray-700">৩. অতিথিদের রেজিস্ট্রেশন ফ্রি <span class="num-fix">500</span> টাকা।</span></label>
+                        <label class="flex items-center p-4 bg-white rounded-2xl shadow-sm cursor-pointer border-2 border-transparent hover:border-indigo-400 transition"><input type="checkbox" class="fee-checkbox w-6 h-6 accent-indigo-600" data-label="ছাত্র-ছাত্রী" data-amount="1000"><span class="ml-4 font-semibold text-gray-700">৪. ছাত্র-ছাত্রীদের জন্য রেজিস্ট্রেশন ফি <span class="num-fix">1000</span> টাকা।</span></label>
                     </div>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div><label class="block font-bold text-gray-700 mb-3">১১. আপনি কোনটি নিতে চান? *</label>
-                        <div class="flex space-x-6"><label><input type="radio" name="gift" value="উত্তরীয়" required> উত্তরীয়</label><label><input type="radio" name="gift" value="টিশার্ট"> টিশার্ট</label></div>
+                        <div class="flex space-x-6"><label class="flex items-center font-bold cursor-pointer"><input type="radio" name="gift" value="উত্তরীয়" required class="mr-2 w-5 h-5"> উত্তরীয়</label><label class="flex items-center font-bold cursor-pointer"><input type="radio" name="gift" value="টিশার্ট" class="mr-2 w-5 h-5"> টিশার্ট</label></div>
                     </div>
-                    <div><label class="block font-bold text-gray-700 mb-3">১২. টি-শার্ট সাইজ *</label><select id="tshirt" required class="w-full border-2 p-4 rounded-2xl outline-none"><option value="">বেছে নিন</option><option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option><option>XXXL</option></select></div>
+                    <div><label class="block font-bold text-gray-700 mb-3">১২. আপনার টি-শার্ট এর সাইজ? *</label><select id="tshirt" required class="w-full border-2 p-4 rounded-2xl outline-none"><option value="">বেছে নিন</option><option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option><option>XXXL</option></select></div>
                 </div>
 
                 <div class="bg-gray-50 p-8 rounded-[2rem] border border-gray-200">
-                    <label class="block font-bold text-gray-700 mb-4">১৩. আপনি কি এই পুনর্মিলনীতে আর্থিক অবদান রাখতে চান?</label>
+                    <label class="block font-bold text-gray-700 mb-4 text-sm">১৩. আপনি কি এই পুনর্মিলনীতে আর্থিক বা অন্যভাবে অবদান রাখতে চান?</label>
                     <div class="flex gap-8 mb-4">
-                        <label class="flex items-center cursor-pointer font-bold"><input type="radio" name="wC" onclick="toggleC(true)" class="w-5 h-5 mr-2"> হ্যাঁ</label>
-                        <label class="flex items-center cursor-pointer font-bold"><input type="radio" name="wC" onclick="toggleC(false)" checked class="w-5 h-5 mr-2"> না</label>
+                        <label class="flex items-center cursor-pointer font-bold"><input type="radio" name="wC" onclick="toggleC(true)" class="w-5 h-5 mr-2 accent-green-600"> হ্যাঁ</label>
+                        <label class="flex items-center cursor-pointer font-bold"><input type="radio" name="wC" onclick="toggleC(false)" checked class="w-5 h-5 mr-2 accent-red-600"> না</label>
                     </div>
                     <div id="cField" class="hidden">
-                        <textarea id="contribution" class="w-full border-2 border-gray-200 p-4 rounded-2xl outline-none focus:border-indigo-500" placeholder="আপনার অবদানের ধরণ বা পরিমাণ সম্পর্কে লিখুন..."></textarea>
+                        <textarea id="contribution" class="w-full border-2 border-gray-200 p-4 rounded-2xl outline-none focus:border-indigo-500" placeholder="বিস্তারিত লিখুন (পরিমাণ বা ধরণের কথা)..."></textarea>
                     </div>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div><label class="block font-bold text-gray-700 mb-2">১৪. পেমেন্ট মাধ্যম *</label>
+                    <div><label class="block font-bold text-gray-700 mb-2">১৪. রেজিস্ট্রেশন ফ্রি প্রদানের মাধ্যম *</label>
                         <select id="paymentMethod" required class="w-full border-2 border-orange-200 bg-orange-50 p-4 rounded-2xl outline-none shadow-inner"><option value="">নির্বাচন করুন</option><option value="বিকাশ">বিকাশ (Bkash)</option><option value="নগদ">নগদ (Nagad)</option><option value="রকেট">রকেট (Rocket)</option></select>
+                        <p class="text-[10px] text-orange-600 mt-2 font-bold uppercase tracking-tighter num-fix">Cash out charge (20 BDT / 1000 BDT) applies</p>
                     </div>
-                    <div><label class="block font-bold text-red-600 mb-2">১৫. পাসপোর্ট সাইজ ছবি *</label><input type="file" id="photo" required accept="image/*" class="w-full border-2 border-dashed border-red-200 p-3 rounded-2xl bg-red-50 cursor-pointer"></div>
+                    <div><label class="block font-bold text-red-600 mb-2">১৫. আপনার পাসপোর্ট সাইজ ছবি *</label><input type="file" id="photo" required accept="image/*" class="w-full border-2 border-dashed border-red-200 p-3 rounded-2xl bg-red-50 cursor-pointer"></div>
                 </div>
 
                 <button type="button" id="payBtn" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-black text-2xl py-6 rounded-[2rem] shadow-2xl transition transform active:scale-95 num-fix">PAY 0 BDT</button>
@@ -109,35 +115,37 @@
 
     <div id="paymentModal" class="modal">
         <div class="modal-content text-center">
-            <span id="closeModal" class="absolute top-4 right-6 text-3xl font-bold cursor-pointer text-gray-400 hover:text-red-500">&times;</span>
-            <h3 class="text-2xl font-bold text-indigo-900 mb-6">পেমেন্ট ডিটেইলস</h3>
-            <div class="bg-gray-50 p-6 rounded-3xl mb-8 space-y-3 shadow-inner">
-                <p class="flex justify-between"><span>মাধ্যম:</span> <span id="dispMethod" class="font-bold text-blue-700"></span></p>
-                <p class="flex justify-between text-lg"><span>নম্বর:</span> <span id="dispNumber" class="font-black text-gray-900 num-fix tracking-widest select-all"></span></p>
-                <p class="flex justify-between border-t pt-3 text-xl font-bold text-red-600"><span>মোট টাকা:</span> <span id="dispTotal" class="num-fix"></span></p>
+            <span id="closeModal" class="absolute top-4 right-6 text-3xl font-bold cursor-pointer text-gray-400 hover:text-red-500 transition">&times;</span>
+            <h3 class="text-2xl font-bold text-indigo-900 mb-6 underline decoration-indigo-200 underline-offset-8">পেমেন্ট নিশ্চিত করুন</h3>
+            <div class="bg-gray-50 p-6 rounded-[2rem] mb-8 space-y-4 shadow-inner">
+                <p class="flex justify-between text-gray-500"><span>পেমেন্ট মাধ্যম:</span> <span id="dispMethod" class="font-bold text-indigo-800"></span></p>
+                <p class="flex justify-between text-lg items-center"><span>নম্বর:</span> <span id="dispNumber" class="font-black text-gray-900 num-fix tracking-widest select-all bg-white px-3 py-1 rounded-lg border border-gray-100"></span></p>
+                <div class="border-t border-gray-200 pt-4 flex justify-between items-center"><span class="font-bold text-gray-700">মোট টাকার পরিমাণ:</span> <span id="dispTotal" class="font-black text-2xl text-red-600 num-fix"></span></div>
             </div>
             <div class="text-left space-y-4">
-                <label class="block text-sm font-bold text-gray-600">টাকা পাঠানোর পর ট্রানজেকশন আইডি দিন *</label>
-                <input type="text" id="trxId" placeholder="TrxID বা প্রেরক নম্বর" class="w-full border-2 border-blue-400 p-4 rounded-2xl outline-none focus:ring-4 focus:ring-blue-100">
-                <button id="finalSubmit" class="w-full bg-indigo-600 text-white font-bold py-5 rounded-2xl shadow-xl hover:bg-indigo-700 transition flex items-center justify-center gap-3">আমি পেমেন্ট করেছি</button>
+                <label class="block text-sm font-bold text-gray-700">টাকা পাঠানোর পর TrxID বা প্রেরক নম্বর দিন *</label>
+                <input type="text" id="trxId" placeholder="TrxID / Sender Number" class="w-full border-2 border-blue-400 p-4 rounded-2xl outline-none focus:ring-4 focus:ring-blue-100">
+                <button id="finalSubmit" class="w-full bg-indigo-600 text-white font-bold py-5 rounded-2xl shadow-xl hover:bg-indigo-700 transition flex items-center justify-center gap-3">
+                    আমি পেমেন্ট করেছি
+                </button>
             </div>
         </div>
     </div>
 
     <script>
         const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwBaKjb1k6Bl2oxiIXmN0xOP6hkJyBLYF5m0DfYgtoTrSrbqGqemPXWJoe1wdgP6wxwUg/exec"; 
-        const NUMS = { "বিকাশ": "017XXXXXXXX", "নগদ": "018XXXXXXXX", "রকেট": "019XXXXXXXX" };
+        const NUMS = { "বিকাশ": "017XXXXXXXX", "নগদ": "018XXXXXXXX", "রকেট": "019XXXXXXXX" }; // আপনার নম্বরগুলো দিন
 
-        const form = document.getElementById('reunionForm');
+        const reunionForm = document.getElementById('reunionForm');
         const countSpan = document.getElementById('liveCount');
         const checkboxes = document.querySelectorAll('.fee-checkbox');
 
-        // লাইভ কাউন্টার লোড
+        // লাইভ কাউন্টার
         fetch(SCRIPT_URL).then(r => r.json()).then(d => countSpan.innerText = d.count).catch(() => countSpan.innerText = "0");
 
         function toggleC(s) { document.getElementById('cField').style.display = s ? 'block' : 'none'; }
 
-        // প্রাইস আপডেট
+        // প্রাইস ক্যালকুলেশন
         let totalAmount = 0;
         checkboxes.forEach(cb => {
             cb.addEventListener('change', () => {
@@ -148,10 +156,10 @@
             });
         });
 
-        // পপআপ ওপেন ও ভ্যালিডেশন
+        // ভ্যালিডেশন ও পপআপ
         document.getElementById('payBtn').onclick = () => {
-            if (!form.reportValidity()) { form.querySelector(':invalid').focus(); return; }
-            if (!Array.from(checkboxes).some(c => c.checked)) { alert("কমপক্ষে একটি অংশগ্রহণের অপশন সিলেক্ট করুন।"); return; }
+            if (!reunionForm.reportValidity()) { reunionForm.querySelector(':invalid').focus(); return; }
+            if (!Array.from(checkboxes).some(c => c.checked)) { alert("কমপক্ষে একটি অপশন সিলেক্ট করুন।"); return; }
             
             const method = document.getElementById('paymentMethod').value;
             document.getElementById('dispMethod').innerText = method;
@@ -168,7 +176,7 @@
             if(!trx) return alert("পেমেন্ট তথ্য দিন!");
 
             this.disabled = true;
-            this.innerHTML = `<span class="spinner"></span> সাবমিট হচ্ছে...`;
+            this.innerHTML = `<span class="spinner"></span> ফাইল আপলোড ও সাবমিট হচ্ছে...`;
 
             const photoInput = document.getElementById('photo');
             let photoBase64 = "No Image";
@@ -185,9 +193,13 @@
             params.append('batch', document.getElementById('batch').value);
             params.append('email', document.getElementById('email').value);
             params.append('phone', document.getElementById('phone').value);
+            params.append('profession', document.getElementById('profession').value);
+            params.append('org', document.getElementById('org').value);
+            params.append('blood', document.getElementById('blood').value);
             params.append('address', document.getElementById('address').value);
+            params.append('facebook', document.getElementById('facebook').value);
             params.append('attendance', Array.from(checkboxes).filter(c => c.checked).map(c => c.dataset.label).join(", "));
-            params.append('gift', form.querySelector('input[name="gift"]:checked').value);
+            params.append('gift', reunionForm.querySelector('input[name="gift"]:checked').value);
             params.append('tshirt', document.getElementById('tshirt').value);
             params.append('contribution', document.getElementById('contribution')?.value || "No");
             params.append('method', document.getElementById('paymentMethod').value);
@@ -201,18 +213,17 @@
                 if(resJ.result === "success") {
                     document.body.innerHTML = `
                     <div class="flex items-center justify-center min-h-screen p-6 text-center">
-                        <div class="bg-white p-12 rounded-[3rem] shadow-2xl max-w-lg border border-indigo-100">
+                        <div class="bg-white p-12 rounded-[3.5rem] shadow-2xl max-w-lg border border-indigo-100">
                             <h1 class="text-7xl mb-6">❤️</h1>
-                            <h2 class="text-2xl font-bold mb-4">রেজিস্ট্রেশন করার জন্য আপনাকে অসংখ্য ধন্যবাদ</h2>
-                            <p class="text-gray-500 mb-8 leading-relaxed">আপনার আবেদনটি সফলভাবে গৃহীত হয়েছে। আপনার ইমেইলে চেক করুন।</p>
-                            <div class="bg-indigo-50 p-6 rounded-3xl font-black text-indigo-700 text-2xl num-fix mb-8 ring-2 ring-indigo-100">রেজিস্ট্রেশন নম্বর: #${resJ.regNum}</div>
-                            <p class="text-xs text-gray-400 mb-8 uppercase tracking-widest italic">ABHHS Alumni Association</p>
-                            <button onclick="location.reload()" class="bg-indigo-600 text-white px-10 py-4 rounded-2xl font-bold shadow-lg">মূল পাতায় ফিরুন</button>
+                            <h2 class="text-3xl font-black text-gray-800 mb-4">রেজিস্ট্রেশন সফল হয়েছে</h2>
+                            <p class="text-gray-500 mb-10 leading-relaxed font-semibold">আপনার তথ্য সঠিকভাবে সংরক্ষিত হয়েছে। দ্রুত আপনার ইমেইল চেক করুন।</p>
+                            <div class="bg-indigo-50 p-8 rounded-3xl font-black text-indigo-700 text-2xl num-fix mb-10 ring-4 ring-indigo-50">#${resJ.regNum}</div>
+                            <button onclick="location.reload()" class="bg-indigo-600 text-white px-12 py-5 rounded-2xl font-bold shadow-2xl hover:bg-indigo-700 transition transform hover:scale-105">ফিরে যান</button>
                         </div>
                     </div>`;
                 }
             } catch (e) {
-                alert("ত্রুটি হয়েছে, আবার চেষ্টা করুন।");
+                alert("সার্ভারে সমস্যা হয়েছে, আবার চেষ্টা করুন।");
                 this.disabled = false;
                 this.innerText = "আমি পেমেন্ট করেছি";
             }
