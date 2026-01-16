@@ -149,6 +149,38 @@ textarea {
 
     
 
+/* ===== Pay Button ===== */
+
+.pay-section {
+  margin-top: 30px;
+  text-align: center;
+}
+
+#payButton {
+  width: 100%;
+  padding: 16px;
+  font-size: 18px;
+  font-weight: 600;
+  background: #0a3d62;
+  color: #ffffff;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+#payButton:hover {
+  background: #083353;
+}
+
+#payButton:active {
+  transform: scale(0.98);
+}
+    
+
+
+
+    
 
     
   </style>
@@ -396,12 +428,27 @@ textarea {
 
 
 
+<!-- Pay Button Section -->
+<div class="pay-section">
 
+  <button type="submit" id="payButton">
+    পে করুন ৳ <span id="payAmount">0</span>
+  </button>
+
+</div>
 
 
   
 
 
+
+
+
+
+
+
+
+  
 
   
 </div>
@@ -433,6 +480,34 @@ textarea {
         contributionBox.style.display = 'none';
       }
     });
+  });
+</script>
+
+
+
+
+<script>
+  const attendCheckboxes = document.querySelectorAll('.attend-item input[type="checkbox"]');
+  const payAmountEl = document.getElementById('payAmount');
+
+  function calculateTotal() {
+    let baseAmount = 0;
+
+    attendCheckboxes.forEach(cb => {
+      if (cb.checked) {
+        baseAmount += parseInt(cb.value);
+      }
+    });
+
+    // Service charge: প্রতি ১০০ টাকায় ২ টাকা
+    let serviceCharge = Math.floor(baseAmount / 100) * 2;
+    let finalAmount = baseAmount + serviceCharge;
+
+    payAmountEl.textContent = finalAmount;
+  }
+
+  attendCheckboxes.forEach(cb => {
+    cb.addEventListener('change', calculateTotal);
   });
 </script>
 
