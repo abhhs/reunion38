@@ -229,7 +229,26 @@ textarea {
     
 
 
+/* ===== Modal Close Button ===== */
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  background: transparent;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  color: #444;
+}
 
+.close-btn:hover {
+  color: #000;
+}
+
+    
+.modal-content {
+  position: relative;
+}
     
     
 
@@ -499,6 +518,7 @@ textarea {
 
 
 <!-- Payment Popup -->
+  <button type="button" id="closeModal" class="close-btn">✕</button>
 <div id="paymentModal" class="modal" style="display:none;">
   <div class="modal-content">
 
@@ -638,7 +658,13 @@ textarea {
   });
 </script>
 
+<script>
+  const closeModalBtn = document.getElementById('closeModal');
 
+  closeModalBtn.addEventListener('click', function () {
+    modal.style.display = 'none';
+  });
+</script>
 
 
 
