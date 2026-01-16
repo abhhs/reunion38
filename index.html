@@ -94,6 +94,36 @@ textarea {
   transform: scale(1.1);
 }
 
+
+
+.attend-options {
+  margin-top: 12px;
+}
+
+.attend-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 12px;
+  background: #ffffff;
+  margin-bottom: 12px;
+}
+
+.attend-item input {
+  transform: scale(1.2);
+  flex-shrink: 0;
+}
+
+.attend-item span {
+  font-size: 16px;
+  font-weight: 500;
+  color: #1f2937;
+  line-height: 1.4;
+}
+
+
     
   </style>
 </head>
@@ -183,29 +213,33 @@ textarea {
 
 <label>১০. আপনার কে কে আসতে চাচ্ছেন? *</label>
 
-<div class="checkbox-group">
+<<label>১০. আপনার কে কে আসতে চাচ্ছেন? *</label>
 
-  <label>
+<div class="attend-options">
+
+  <div class="attend-item">
     <input type="checkbox" name="attend" value="0">
-    ৪ বছরের নিচে শিশু (ছেলে বা মেয়ে) — ফ্রি
-  </label>
+    <span>৪ বছরের নিচে শিশু (ছেলে বা মেয়ে) — ফ্রি</span>
+  </div>
 
-  <label>
+  <div class="attend-item">
     <input type="checkbox" name="attend" value="300">
-    ৫–১০ বছরের বাচ্চা — ৩০০ টাকা
-  </label>
+    <span>৫–১০ বছরের বাচ্চা — ৩০০ টাকা</span>
+  </div>
 
-  <label>
+  <div class="attend-item">
     <input type="checkbox" name="attend" value="500">
-    অতিথি — ৫০০ টাকা
-  </label>
+    <span>অতিথি — ৫০০ টাকা</span>
+  </div>
 
-  <label>
+  <div class="attend-item">
     <input type="checkbox" name="attend" value="1000">
-    ছাত্র–ছাত্রী — ১০০০ টাকা
-  </label>
+    <span>ছাত্র–ছাত্রী — ১০০০ টাকা</span>
+  </div>
 
 </div>
+
+<br>
 
 <br>
 
