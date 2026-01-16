@@ -269,24 +269,84 @@ doneBtn.onclick = () => {
 };
 
 finalSubmitBtn.onclick = () => {
+
   if (transactionInput.value.trim() === "") {
-    alert("Transaction ID অথবা Sender Number দিন");
+    alert("Transaction ID অথবা যে নাম্বার থেকে টাকা পাঠানো হয়েছে তা দিন");
     return;
   }
 
+  // Loader দেখাও
   registrationForm.style.display = "none";
   loader.style.display = "block";
 
-  setTimeout(() => {
-    loader.style.display = "none";
-    thankYou.style.display = "block";
+  // === Form data collect ===
+  const formData = {
+    name: document.querySelector('input[required]').value,
+    batch: document.querySelectorAll('input')[1].value,
+    email: document.querySelector('input[type="email"]').value,
+    phone: document.querySelectorAll('input')[3].value,
+    profession: document.querySelectorAll('input')[4].value,
+    organization: document.querySelectorAll('input')[5].value,
+    blood: document.querySelectorAll('input')[6].value,
+    address: document.querySelector('textarea').value,
+    facebook: document.querySelectorAll('input')[7].value,
+    attendance: Array.from(
+      document.querySelectorAll('.option-card input[type="checkbox"]:checked')
+    ).map(c => c.nextElementSibling.innerText).join(", "),
+    item: document.querySelector('input[name="item"]:checked')?.nextElementSibling.innerText || "",
+    size: document.querySelector('input[name="size"]:checked')?.nextElementSibling.innerText || "",
+    contribution: donationBox.style.display === "block"
+      ? donationBox.querySelector('textarea').value
+      : "",
+    payment: document.querySelector('input[name="payment"]:checked').value,
+    amount: payAmount.textContent,
+    transaction: transactionInput.value
+  };
 
-    let n = ++count;
-    localStorage.setItem("regCount", n);
-    regCount.textContent = n;
-    regNumber.textContent = n;
-  }, 2000);
-};;
+  // === Send to Google Sheet ===
+  sendToGoogleSheet(formData)
+    .then(res => {
+      loader.style.display = "none";
+
+      if (res.success) {
+        thankYou.style.display = "block";
+        regNumber.textContent = res.regNo;
+
+        // Counter update (UI only)
+        let count = localStorage.getItem("regCount") || 0;
+        count++;
+        localStorage.setItem("regCount", count);
+        regCount.textContent = count;
+      } else {
+        alert("ডাটা পাঠাতে সমস্যা হয়েছে: " + res.error);
+        registrationForm.style.display = "block";
+      }
+    })
+    .catch(err => {
+      loader.style.display = "none";
+      alert("Server error: " + err.message);
+      registrationForm.style.display = "block";
+    });
+};
+
+
+
+
+  const SHEET_URL = "https://script.google.com/macros/s/AKfycbyDwz_sAH6YAYkO7La5iyfxJ4HGb0-a84FhYCLn7SJK6uDpGv_zUf8m-RwKMe_Ec-6k/exec";
+  function sendToGoogleSheet(data) {
+  return fetch(SHEET_URL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(data)
+  }).then(res => res.json());
+}
+
+  
+  
+
+  
 </script>
 
 </body>
