@@ -196,9 +196,18 @@ Aricha Belayet Hossain High School Alumni Association
 পে করুন ৳ <span id="payAmount">0</span>
 </button>
 
-<div id="transactionSection" style="display:none">
-<label>১৬. Transaction ID / Sender Number *</label>
-<input id="transactionInput">
+<div id="transactionSection" style="display:none; margin-top:20px;">
+  <label>১৬. Transaction ID / Sender Number *</label>
+  <input id="transactionInput" placeholder="Transaction ID বা যে নাম্বার থেকে টাকা পাঠানো হয়েছে">
+
+  <button
+    type="button"
+    class="pay-btn"
+    id="finalSubmitBtn"
+    style="margin-top:10px;"
+  >
+    ফাইনাল সাবমিট করুন
+  </button>
 </div>
 
 </form>
@@ -252,23 +261,32 @@ registrationForm.onsubmit=e=>{
  paymentModal.style.display="flex";
 };
 closeModal.onclick=()=>paymentModal.style.display="none";
-doneBtn.onclick=()=>{
- paymentModal.style.display="none";
- transactionSection.style.display="block";
- transactionInput.required=true;
- transactionInput.onchange=()=>{
-   registrationForm.style.display="none";
-   loader.style.display="block";
-   setTimeout(()=>{
-     loader.style.display="none";
-     thankYou.style.display="block";
-     let n=++count;
-     localStorage.setItem("regCount",n);
-     regCount.textContent=n;
-     regNumber.textContent=n;
-   },2000);
- };
+doneBtn.onclick = () => {
+  paymentModal.style.display = "none";
+  transactionSection.style.display = "block";
+  transactionInput.required = true;
+  transactionInput.focus();
 };
+
+finalSubmitBtn.onclick = () => {
+  if (transactionInput.value.trim() === "") {
+    alert("Transaction ID অথবা Sender Number দিন");
+    return;
+  }
+
+  registrationForm.style.display = "none";
+  loader.style.display = "block";
+
+  setTimeout(() => {
+    loader.style.display = "none";
+    thankYou.style.display = "block";
+
+    let n = ++count;
+    localStorage.setItem("regCount", n);
+    regCount.textContent = n;
+    regNumber.textContent = n;
+  }, 2000);
+};;
 </script>
 
 </body>
